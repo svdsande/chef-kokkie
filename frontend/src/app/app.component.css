@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.sidenav-container {
+  height: 100%;
+
+  .sidenav-content {
+    padding: 20px;
+  }
+
+  .sidenav {
+    background-color: var(--primary-color);
+    padding: 20px;
+
+    .header {
+      font-family: 'Leckerli One', cursive;
+      font-size: 42px;
+      color: white;
+      text-align: center;
+    }
+  }
+}

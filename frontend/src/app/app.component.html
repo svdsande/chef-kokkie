@@ -1,1 +1,10 @@
-<router-outlet />
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <h1 class="header">ChefKokkie 🧑‍🍳</h1>
+    <mat-divider></mat-divider>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    Main content
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>
