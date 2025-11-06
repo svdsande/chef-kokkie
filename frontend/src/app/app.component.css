@@ -27,6 +27,10 @@
 
       mat-list-item {
         margin-bottom: 12px;
+
+        a {
+          text-decoration: none;
+        }
       }
 
       mat-list-item:last-child {
