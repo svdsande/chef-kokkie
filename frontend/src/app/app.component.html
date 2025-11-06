@@ -2,6 +2,14 @@
   <mat-sidenav mode="side" opened class="sidenav">
     <h1 class="header">ChefKokkie 🧑‍🍳</h1>
     <mat-divider></mat-divider>
+    <mat-nav-list class="menu-list">
+      @for (item of menuItems; track $index) {
+        <mat-list-item>
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          <a matListItemTitle routerLink="{{ item.route }}">{{ item.label }}</a>
+        </mat-list-item>
+      }
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
     Main content
