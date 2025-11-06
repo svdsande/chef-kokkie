@@ -4,7 +4,9 @@
     <mat-divider></mat-divider>
     <mat-nav-list class="menu-list">
       @for (item of menuItems; track $index) {
-        <mat-list-item>
+        <mat-list-item (click)="navigateTo(item.route)" routerLinkActive
+          #rla="routerLinkActive"
+          [activated]="rla.isActive">
           <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
           <a matListItemTitle routerLink="{{ item.route }}">{{ item.label }}</a>
         </mat-list-item>
