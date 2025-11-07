@@ -1,11 +1,7 @@
-:host {
+.sidenav-container {
   display: block;
   height: 100%;
   width: 100%;
-}
-
-.sidenav-container {
-  height: 100%;
 
   .sidenav-content {
     padding: 20px;
