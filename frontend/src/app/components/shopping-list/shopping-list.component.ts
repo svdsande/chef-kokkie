@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ShoppingListService } from '../../services/shopping-list/shopping-list-service';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-shopping-list',
@@ -7,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './shopping-list.component.css',
 })
 export class ShoppingListComponent {
+  private readonly shoppingListService = inject(ShoppingListService);
 
+  shoppingList = toSignal(this.shoppingListService.getShoppingList(), { initialValue: [] });
 }

@@ -27,3 +27,5 @@ Object.defineProperty(document.body.style, 'transform', {
 });
 
 HTMLCanvasElement.prototype.getContext = jest.fn() as typeof HTMLCanvasElement.prototype.getContext;
+
+global.jest = jest;

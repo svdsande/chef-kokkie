@@ -7,7 +7,7 @@ class ShoppingListService:
 
     def get_items(self):
         print("Retrieving all items")
-        return []
+        return ["item1", "item2", "item3"]
     
     def update_item(self, item_id, new_data):
         print(f"Updating item with ID: {item_id} with new data: {new_data}")    
