@@ -1,0 +1,26 @@
+.grocery-item {
+  display: flex;
+  align-items: center;
+}
+
+.crossed-off-groceries-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    cursor: pointer;
+
+    mat-icon, h3 {
+      color: var(--disabled-highlight-color);
+    }
+  }
+
+  mat-icon, h3 {
+    color: var(--disabled-color);
+  }
+
+  .strikethrough {
+    text-decoration: line-through;
+  }
+}

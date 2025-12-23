@@ -1,7 +1,25 @@
-<p>shopping-list works!</p>
-
-<ul>
-  @for (item of shoppingList(); track $index) {
-    <li>{{ item }} </li>
+<mat-selection-list (selectionChange)="groceriesChanged($event.source.selectedOptions.selected)">
+  @for (grocery of activeGroceries(); track $index) {
+    <div class="grocery-item">
+      <button mat-icon-button (click)="deleteGrocery(grocery.name)" aria-label="Delete grocery">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <mat-list-option [value]="grocery" [checkboxPosition]="'before'">{{ grocery.name }}</mat-list-option>
+    </div>
   }
-</ul>
+</mat-selection-list>
+
+@if (numberOfCrossedOffGroceries() > 0) {
+  <div class="crossed-off-groceries-header" (click)="toggleExpandCrossedOffGroceries()" (keyup.enter)="toggleExpandCrossedOffGroceries()" (keyup.space)="toggleExpandCrossedOffGroceries()" tabindex="0" role="button">
+    <mat-icon>{{ expandCrossedOffGroceries() ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+    <h3>{{ numberOfCrossedOffGroceries() }} {{ numberOfCrossedOffGroceries() === 1 ? 'boodschap' : 'boodschappen' }} doorgestreept</h3>
+  </div>
+
+  @if (expandCrossedOffGroceries()) {
+    <mat-selection-list [disabled]="true" class="crossed-off-groceries">
+      @for (grocery of crossedOffGroceries(); track $index) {
+        <mat-list-option [value]="grocery" [checkboxPosition]="'before'" [selected]="true" class="strikethrough">{{ grocery.name }}</mat-list-option>
+      }
+    </mat-selection-list>
+  }
+}

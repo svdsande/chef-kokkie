@@ -18,7 +18,7 @@ export class HttpService {
     return this.httpClient.post<T>(`${this.apiUrl}/${endpoint}`, data, { params });
   }
 
-  put<T>(endpoint: string, data: unknown, params?: HttpParams): Observable<T> {
+  put<T>(endpoint: string, data?: unknown, params?: HttpParams): Observable<T> {
     return this.httpClient.put<T>(`${this.apiUrl}/${endpoint}`, data, { params });
   }
 
