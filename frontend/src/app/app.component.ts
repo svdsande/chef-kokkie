@@ -4,6 +4,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { Title } from '@angular/platform-browser';
 
 interface MenuItem {
   label: string;
@@ -19,6 +20,7 @@ interface MenuItem {
 })
 export class AppComponent {
   private readonly router = inject(Router);
+  readonly title = inject(Title);
 
   readonly menuItems: MenuItem[] = [
     { label: 'Dashboard', icon: 'dashboard', route: '/dashboard' },

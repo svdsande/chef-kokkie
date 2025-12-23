@@ -4,8 +4,8 @@ import { MenuPlannerComponent } from './components/menu-planner/menu-planner.com
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 
 export const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'menu-planner', component: MenuPlannerComponent },
-  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'dashboard', component: DashboardComponent, title: 'Dashboard' },
+  { path: 'menu-planner', component: MenuPlannerComponent, title: 'Menu Planner' },
+  { path: 'shopping-list', component: ShoppingListComponent, title: 'Boodschappenlijst' },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];

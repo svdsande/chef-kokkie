@@ -14,7 +14,9 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
-    Main content
+    <header class="header">
+      <h1 class="page-title">{{ title.getTitle() }}</h1>
+    </header>
     <router-outlet />
   </mat-sidenav-content>
 </mat-sidenav-container>
